@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: orders_app
+    volumes:
+      - ./app:/app
+    command: ["python", "orders_analysis.py"]
+
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    container_name: orders_test
+    volumes:
+      - ./app:/app
+    command: ["python", "-m", "unittest", "discover"]
