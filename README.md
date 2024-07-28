@@ -40,3 +40,32 @@ This will start the test service and run the unit tests using unittest.
 
 # Testing Results
 ![image](https://github.com/user-attachments/assets/a9137290-35a7-48f1-b6fe-68336150a7db)
+
+
+# Using Docker Swarm 
+
+```sh 
+     docker swarm init
+```
+
+```sh 
+    docker stack deploy -c docker-compose.yml orders_app
+```
+
+```sh 
+    docker stack services orders_app
+```
+### scale out using  docker swarm
+```sh 
+    docker service scale orders_app_app=3
+```
+### check status of services
+```sh
+    docker stack services orders_app
+```
+
+### Running tests 
+```sh 
+docker build -f Dockerfile.test -t orders_test .
+
+
