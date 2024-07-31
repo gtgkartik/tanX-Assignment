@@ -21,7 +21,7 @@ To build and run the application:
 2. Build and start the application service:
 
 ```sh
-    docker-compose up --build app
+docker-compose up --build app
 ```
 This will start the application and run the orders_analysis.py script.
 
@@ -51,27 +51,27 @@ This will start the test service and run the unit tests using unittest.
 # Using Docker Swarm 
 
 ```sh 
-     docker swarm init
+docker swarm init
 ```
 
 ```sh 
-    docker stack deploy -c docker-compose.yml orders_app
+docker stack deploy -c docker-compose.yml orders_app
 ```
 
 ```sh 
-    docker stack services orders_app
+docker stack services orders_app
 ```
 ### scale out using  docker swarm
 ```sh 
-    docker service scale orders_app_app=3
+docker service scale orders_app_app=3
 ```
 ### check status of services
 ```sh
-    docker stack services orders_app
+docker stack services orders_app
 ```
 
 ### Running tests 
-```sh 
+```sh
 docker build -f Dockerfile.test -t orders_test .
 
 
